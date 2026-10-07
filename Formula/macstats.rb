@@ -12,7 +12,13 @@ class Macstats < Formula
     # Builds with the Command Line Tools' swiftc; SwiftPM's own sandbox cannot nest in Homebrew's.
     system "make", "app", "SWIFT_FLAGS=--disable-sandbox"
     prefix.install "build/MacStats.app"
-    bin.install_symlink prefix/"MacStats.app/Contents/MacOS/MacStats" => "macstats"
+    # A command that runs the binary inside the bundle (a symlink would hide the bundle
+    # from it): `macstats --cpu`, `macstats --version`, and the rest of its flags.
+    (bin/"macstats").write <<~EOS
+      #!/bin/sh
+      exec "#{opt_prefix}/MacStats.app/Contents/MacOS/MacStats" "$@"
+    EOS
+    chmod 0755, bin/"macstats"
   end
 
   service do
@@ -24,10 +30,8 @@ class Macstats < Formula
 
   def caveats
     <<~EOS
-      To show the items now and at every login:
-        brew services start macstats
-      Right-click any item for Quit; `brew services stop macstats` stops it for good.
-      The installer script (curl | sh) is the other way in: use one or the other.
+      Right-click any item in the menu bar for Quit; `brew services stop macstats` stops it for good.
+      MacStats' own installer (curl | sh, see its README) is the other way in: use one or the other.
     EOS
   end
 
