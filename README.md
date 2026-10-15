@@ -8,3 +8,13 @@ brew services start macstats          # show them now and at every login
 ```
 
 A formula here builds from a tagged release of its repository; see each formula's `url`.
+
+## Arkos IDE
+
+A terminal-pane IDE for running many Claude Code sessions, with a daemon that keeps them alive.
+
+```
+brew install --no-quarantine csarkosh/tap/arkos-ide
+```
+
+The app updates itself (`auto_updates`), so `brew upgrade` leaves it alone. `--no-quarantine` is needed until the app is notarized: the bundle is ad-hoc signed.
