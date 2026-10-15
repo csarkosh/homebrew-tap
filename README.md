@@ -14,7 +14,8 @@ A formula here builds from a tagged release of its repository; see each formula'
 A terminal-pane IDE for running many Claude Code sessions, with a daemon that keeps them alive.
 
 ```
-brew install --no-quarantine csarkosh/tap/arkos-ide
+brew install --cask csarkosh/tap/arkos-ide
+xattr -dr com.apple.quarantine "/Applications/Arkos IDE.app"
 ```
 
-The app updates itself (`auto_updates`), so `brew upgrade` leaves it alone. `--no-quarantine` is needed until the app is notarized: the bundle is ad-hoc signed.
+The app updates itself (`auto_updates`), so `brew upgrade` leaves it alone. The second line is needed until the app is notarized: the bundle is ad-hoc signed, and Gatekeeper refuses a quarantined ad-hoc app.
