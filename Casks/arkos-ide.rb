@@ -1,6 +1,6 @@
 cask "arkos-ide" do
-  version "0.2.17"
-  sha256 "e162e64e9719a43874ce748a8f4e21c29e3c0806d1b9f2baec3aeb794ab029b2"
+  version "0.2.18"
+  sha256 "bc7954de1db4b98bacb2ddbfc5ab47c11bf5866531db7fc29c195c2f964061cc"
 
   url "https://github.com/csarkosh/ide-arkos/releases/download/v#{version}/Arkos-IDE-#{version}-arm64.zip"
   name "Arkos IDE"
