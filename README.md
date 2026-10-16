@@ -15,7 +15,6 @@ A terminal-pane IDE for running many Claude Code sessions, with a daemon that ke
 
 ```
 brew install --cask csarkosh/tap/arkos-ide
-xattr -dr com.apple.quarantine "/Applications/Arkos IDE.app"
 ```
 
-The app updates itself (`auto_updates`), so `brew upgrade` leaves it alone. The second line is needed until the app is notarized: the bundle is ad-hoc signed, and Gatekeeper refuses a quarantined ad-hoc app.
+The app updates itself (`auto_updates`), so `brew upgrade` leaves it alone. Releases from 0.3.2 on are signed with a Developer ID and notarized, so the download opens as any app does.
