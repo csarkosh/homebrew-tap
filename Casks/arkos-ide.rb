@@ -1,6 +1,6 @@
 cask "arkos-ide" do
-  version "0.3.4"
-  sha256 "bbf9f30b98be7e621e03cc9d131f83f1e6ca1bb4bf21cd0b839c3487d332abae"
+  version "0.4.0"
+  sha256 "e54c4b56ef89a9f2ad55db31b80a0a1711fd23fad1786c3b97612808904bb148"
 
   url "https://github.com/csarkosh/ide-arkos/releases/download/v#{version}/Arkos-IDE-#{version}-arm64.zip"
   name "Arkos IDE"
@@ -12,6 +12,8 @@ cask "arkos-ide" do
   auto_updates true
 
   app "Arkos IDE.app"
+  # The command line (arkos theme, settings, guide, doctor) on PATH for shells outside Arkos.
+  binary "#{appdir}/Arkos IDE.app/Contents/MacOS/arkos"
 
   zap trash: [
     "~/Library/Application Support/arkos",
