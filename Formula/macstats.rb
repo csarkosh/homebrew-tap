@@ -1,8 +1,8 @@
 class Macstats < Formula
   desc "Five menu bar items for a Mac: CPU, GPU, RAM, Temp and free disk space"
   homepage "https://github.com/csarkosh/app-macstats"
-  url "https://github.com/csarkosh/app-macstats/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "017fe0f504772b0b624021cac1309b372c2c57b51648ef21bc6438f913cfd964"
+  url "https://github.com/csarkosh/app-macstats/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "619b3b8e17d052f9c27683141566844beaec0f78a8748e88f94e9ddfa4445a60"
   license "MIT"
   head "https://github.com/csarkosh/app-macstats.git", branch: "main"
 
