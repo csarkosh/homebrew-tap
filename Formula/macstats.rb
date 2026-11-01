@@ -32,6 +32,8 @@ class Macstats < Formula
     <<~EOS
       Right-click any item in the menu bar for Quit; `brew services stop macstats` stops it for good.
       MacStats' own installer (curl | sh, see its README) is the other way in: use one or the other.
+
+      Buy me tokens: https://donate.csarko.sh/macstats
     EOS
   end
 
